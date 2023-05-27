@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en"
+      layout:decorate="shared/layout"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<title layout:fragment="title">Seat choice</title>
+<div layout:fragment="content">
+    <h1 class="section_title">Sprzedaż biletów</h1>
+    <div class="screening_sale_page">
+        <h2>Wybór miejsc</h2>
+        <div class="screening_seat_choice">
+            <div class="screening_basic_info">
+                <span class="date" th:text="${screening.getDate() + ' ' + screening.getTime()}">22.12.2022 16:45</span>
+                <span class="title" th:text="${screening.film.getTitle()}">Tytuł filmu</span>
+            </div>
+            <div class="screen">
+                <span>EKRAN</span>
+            </div>
+            <form method="post" th:action="@{/reservations/screenings/{id}/book(id = ${screening.getId()})}">
+                <div class="seats">
+                    <input class="seat_checkbox" name="seatIds" onchange="updateButtonAvailability()"
+                           th:disabled="${takenSeats.contains(seat)}"
+                           th:each="seat : ${screening.getHall().getSeats()}" th:value="${seat.getId()}"
+                           type="checkbox">
+                </div>
+                <button class="purple_button" id="confirm_seats" disabled type="submit">Wybierz</button>
+            </form>
+            <script>
+                function updateButtonAvailability() {
+                    const checkboxes = document.getElementsByName("seatIds");
+                    var button = document.getElementById("confirm_seats");
+                    button.disabled = true;
+                    for (let i = 0; i < checkboxes.length; i++) {
+                        if(checkboxes[i].checked) {
+                            button.disabled = false;
+                            break;
+                        }
+                    }
+                }
+            </script>
+        </div>
+    </div>
+    <div class="alert error" th:if="${errorMessage != null}" th:text="${errorMessage}">
+        Niepowodzenie, wybrane miejsca są niedostępne
+    </div>
+</div>
+</html>

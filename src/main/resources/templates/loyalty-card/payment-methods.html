@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en"
+      layout:decorate="shared/layout"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<title layout:fragment="title">Payment</title>
+<div layout:fragment="content">
+    <h1 class="section_title">Karta dla użytkownika: <div th:text="${user.getLogin()}"></div></h1>
+    <div class="screening_sale_page">
+        <h2>Kwota: 50 zł</h2>
+        <h2>Forma płatności</h2>
+        <div class="payment_methods">
+            <button class="payment_method"
+                    th:onclick="|window.location.href='/loyalty-card/payment-type?method=CARD'|">KARTA
+            </button>
+            <button class="payment_method"
+                    th:onclick="|window.location.href='/loyalty-card/payment-type?method=TRANSFER'|">
+                PRZELEW
+            </button>
+        </div>
+    </div>
+</div>
+</html>

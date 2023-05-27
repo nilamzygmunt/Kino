@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en"
+      layout:decorate="shared/layout"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<title layout:fragment="title">Payment</title>
+<div layout:fragment="content">
+    <h1 class="section_title">Sprzedaż biletów</h1>
+    <div class="screening_sale_page">
+        <h2>Płatność gotówką</h2>
+        <div class="confirmation_div">
+            <span>Czy kwota została wpłacona?</span>
+            <div class="confirmation_buttons">
+                <button class="purple_button"
+                        th:onclick="|window.location.href='/reservations/${reservationId}/payment-methods'|">Anuluj
+                </button>
+                <button class="purple_button"
+                        th:onclick="|window.location.href='/reservations/${reservationId}/payment-method/cash/approve'|">
+                    Potwierdź
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="shared/layout">
+    <head>
+        <title>Add movie</title>
+
+        <!-- CSS -->
+        <style>
+    /* Force scrollbars onto browser window */
+    body {
+      margin-bottom: 200%;
+    }
+
+    /* Box styles */
+    .myBox {
+      border: none;
+      padding: 5px;
+      font: 24px/36px sans-serif;
+      height: 200px;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      text-align: center;
+    }
+
+    .wrapperDesc {
+      text-align: center;
+      border-style: groove;
+    }
+
+    .button {
+      background-color: gray;
+      border: none;
+      color: black;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    #outer
+    {
+      width:100%;
+      text-align: center;
+    }
+    .inner
+    {
+      display: inline-block;
+    }
+
+  </style>
+    </head>
+    <div layout:fragment="content">
+        <h1 class="section_title"> Wypełnij formularz</h1>
+        <div class="wrapperDesc">
+            <div class="myBox" contenteditable="false">
+                <form style="height: 80%" novalidate action="#" method="post"
+                      th:action="@{/loyalty-card/fill-data}">
+                    <input name="login" placeholder="Login">
+                    <input name="name" placeholder="Name">
+                    <input name="lastName" placeholder="Last Name">
+                    <input name="phone" placeholder="PhoneNumber">
+                    <div class="alert error" th:if="${errorMessage != null}" th:text="${errorMessage}">
+                        zły login
+                    </div>
+                    <button id="submit" class="button">Submit</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</html>

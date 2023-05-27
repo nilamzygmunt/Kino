@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en"
+      layout:decorate="shared/layout"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<title layout:fragment="title">Payment</title>
+<div layout:fragment="content">
+    <h1 class="section_title">Sprzedaż biletów</h1>
+    <div class="alert" th:text="${alertPositive}">
+        Sprzedaż zakończona pomyślnie
+    </div>
+</div>
+</html>

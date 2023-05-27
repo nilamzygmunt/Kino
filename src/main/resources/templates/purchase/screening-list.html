@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en"
+      layout:decorate="shared/layout"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<title layout:fragment="title">Screenings</title>
+<div layout:fragment="content">
+    <h1 class="section_title">Sprzedaż biletów</h1>
+    <div class="screening_sale_page">
+        <h2>Dostępne seanse</h2>
+        <div class="alert error" th:if="${errorMessage != null}" th:text="${errorMessage}">
+            Brak dostępnych miejsc na wybrany seans
+        </div>
+        <div class="screening_item" th:each="screening : ${screenings}">
+            <span class="date" th:text="${screening.date + ' ' + screening.time}">22.12.2022 16:45</span>
+            <span class="title" th:text="${screening.film.getTitle()}">Tytuł filmy</span>
+            <button class="edit_button" th:onclick="|window.location.href='/screenings/${screening.getId()}'|">Wybierz
+            </button>
+        </div>
+    </div>
+</div>
+</html>

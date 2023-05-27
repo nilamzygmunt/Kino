@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en"
+      layout:decorate="shared/layout"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<title layout:fragment="title">Payment</title>
+<div layout:fragment="content">
+    <h1 class="section_title">Opłata kartą</h1>
+    <div class="screening_sale_page">
+        <h2>Płatność kartą</h2>
+        <div class="alert error" th:if="${errorMessage != null}" th:text="${errorMessage}">
+            Niepowodzenie
+        </div>
+        <div class="alert" th:if="${alertPositive != null}" th:text="${alertPositive}">
+            powodzenie
+        </div>
+    </div>
+</div>
+</html>

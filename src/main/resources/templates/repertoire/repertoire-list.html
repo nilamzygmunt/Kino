@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en"
+      layout:decorate="shared/layout"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <title layout:fragment="title">Repertoire</title>
+    <style>
+        .button {
+            background-color: gray;
+            border: none;
+            color: black;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            width: 20%;
+        }
+    </style>
+</head>
+<div layout:fragment="content">
+    <h1 class="section_title">Movie Repertoire</h1>
+    <div class="screening_sale_page">
+        <h2>Available movies</h2>
+        <div class="screening_item" th:each="screening : ${screenings}">
+            <span class="date" th:text="${screening.date + ' ' + screening.time}">22.12.2022 16:45</span>
+            <span class="title" th:text="${screening.film.getTitle()}">Movie title</span>
+            <span th:text="${screening.film.getDescription()}">Movie decription</span>
+            <button class="edit_button" th:onclick="|window.location.href='/repertoire/${screening.getId()}'|">Edit
+            </button>
+        </div>
+
+        <div style="text-align: center; margin: 20px">
+            <a id="addMovie" href="/repertoire/film-creator" class="button" >Add new movie</a>
+        </div>
+    </div>
+</div>
+</html>

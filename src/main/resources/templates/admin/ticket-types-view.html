@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="shared/layout">
+<title layout:fragment="title">Ticket types</title>
+<div layout:fragment="content">
+    <h1 class="section_title">Ceny biletów</h1>
+
+    <table class="ticket_table">
+        <tr th:each="ticket : ${tickets}">
+            <td>
+                <div class="ticket_price_info">
+                    <div class="ticket_price_header">
+                        <span class="ticket_title" th:text="${ticket.getName()}">Name</span>
+                        <button class="edit_button"
+                                th:onclick="|window.location.href='/ticket-types/${ticket.getId()}'|">Edytuj
+                        </button>
+                    </div>
+                    <div class="ticket_prices">
+                        <span>Normalny: <span class="price_text"
+                                              th:text="${ticket.getBaseTicketPrice()}">Price</span></span>
+                        <span>Ulgowy: <span class="price_text"
+                                            th:text="${ticket.getReducedTicketPrice()}">Reduced</span></span>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+</html>

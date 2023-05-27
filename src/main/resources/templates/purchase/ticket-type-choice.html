@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en"
+      layout:decorate="shared/layout"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<title layout:fragment="title">Ticket choice</title>
+<div layout:fragment="content">
+    <h1 class="section_title">Sprzedaż biletów</h1>
+    <div class="screening_sale_page">
+        <h2>Wybór biletów</h2>
+        <form method="post" th:action="@{/reservations/{id}/ticket-types(id = ${reservation.getId()})}">
+            <div class="ticket_type_choice_container">
+                <div class="ticket_type_choice" th:each="type : ${ticketTypes}">
+                    <span class="ticket_title" th:text="${type.getName()}">Ticket type name</span>
+                    <div class="ticket_number_choice">
+                        <span>Normalny: <span class="price_text" th:text="${type.getBasePrice()}">Price</span></span>
+                        <div class="ticket_number_picker">
+                            <button class="purple_button" onclick="decreaseNumber(this)"
+                                    th:id="'normal_decrease_' + ${type.getId()}"
+                                    type="button">-
+                            </button>
+                            <button class="purple_button" onclick="increaseNumber(this)"
+                                    th:id="'normal_increase_' + ${type.getId()}"
+                                    type="button">+
+                            </button>
+                            <input onkeypress="return (event.charCode >= 48 && event.charCode <= 57)"
+                                   th:id="'normal_input_' + ${type.getId()}"
+                                   th:name="'ticketsOfType_' + ${type.getId()}"
+                                   type="number"
+                                   value="0">
+                        </div>
+                    </div>
+                    <div class="ticket_number_choice">
+                        <span>Ulgowy: <span class="price_text"
+                                            th:text="${type.getReducedTicketPrice()}">Price</span></span>
+                        <div class="ticket_number_picker">
+                            <button class="purple_button" onclick="decreaseNumber(this)"
+                                    th:id="'reduced_decrease_' + ${type.getId()}"
+                                    type="button">-
+                            </button>
+                            <button class="purple_button" onclick="increaseNumber(this)"
+                                    th:id="'reduced_increase_' + ${type.getId()}"
+                                    type="button">+
+                            </button>
+                            <input onkeypress="return (event.charCode >= 48 && event.charCode <= 57)"
+                                   th:id="'reduced_input_' + ${type.getId()}"
+                                   th:name="'ticketsOfTypeReduced_' + ${type.getId()}"
+                                   type="number"
+                                   value="0">
+                        </div>
+                    </div>
+                </div>
+                <button class="purple_button end_button"
+                        id="confirm_tickets_button"
+                        th:attr="onclick=|checkTicketsNumber(event, '${reservation.getTickets().size()}')|"
+                        type="submit">
+                    Potwierdź
+                </button>
+            </div>
+        </form>
+
+        <script>
+            function increaseNumber(elem) {
+                var id = elem.id;
+                const tokens = id.split("_");
+                const inputId = tokens[0] + "_input_" + tokens[2];
+                const input = document.getElementById(inputId);
+                input.value = parseInt(input.value) + 1;
+            }
+
+            function decreaseNumber(elem) {
+                var id = elem.id;
+                const tokens = id.split("_");
+                const inputId = tokens[0] + "_input_" + tokens[2];
+                const input = document.getElementById(inputId);
+                if (input.value > 0) {
+                    input.value = parseInt(input.value) - 1;
+                }
+            }
+
+            function checkTicketsNumber(e, numOfTickets) {
+                var inputs = document.querySelectorAll(".ticket_type_choice input");
+                var sumOfTickets = 0;
+                console.log(inputs.length);
+                console.log(inputs);
+                for (let i = 0; i < inputs.length; i++) {
+                    console.log(inputs[i].value)
+                    sumOfTickets = sumOfTickets + parseInt(inputs[i].value);
+                }
+                console.log(sumOfTickets);
+                if (sumOfTickets !== parseInt(numOfTickets)) {
+                    e.preventDefault();
+                    window.alert(`Liczba biletów musi być równa liczbie wybranych miejsc: ${numOfTickets}`);
+                }
+            }
+        </script>
+
+    </div>
+    <div class="alert error" th:if="${errorMessage != null}" th:text="${errorMessage}">
+        Niepowodzenie, wybrane miejsca są niedostępne
+    </div>
+</div>
+</html>

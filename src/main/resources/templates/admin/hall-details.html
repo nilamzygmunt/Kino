@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="shared/layout">
+<title layout:fragment="title">Hall details</title>
+<div layout:fragment="content">
+    <div class="ticket_type_page">
+        <div class="header_container">
+            <a href="/halls"><img alt="back-arrow" class="triangle" src="/images/triangle.png"></a>
+            <h1 class="section_title" th:text="${hall.getId()}">Numer sali</h1>
+        </div>
+        <div class="main_container">
+            <div class="seats">
+                <input class="seat_checkbox" name="seatIds"
+                       th:each="seat : ${hall.getSeats()}" th:value="${seat.getId()}"
+                       type="checkbox">
+            </div>
+            <div class="ticket_edit_row">
+                <span>
+                    Liczba miejsc
+                </span>
+                <form novalidate action="#" method="post"
+                      th:action="@{/halls/{id}/edit-seats(id = ${hall.getId()})}">
+                    <input name="newSeatsNumber" onkeypress="return (event.charCode >= 48 && event.charCode <= 57) ||
+                event.charCode == 46"
+                           th:value="${hall.getNumberOfSeats}" type="number">
+                    <button class="edit_button" id="confirm_seats">Edytuj</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <div class="alert error" th:if="${errorMessage != null}" th:text="${errorMessage}">
+        Cena biletu zaktualizowana pomyślnie
+    </div>
+    <div class="alert" th:if="${alertPositive != null}" th:text="${alertPositive}">
+
+    </div>
+</div>
+</html>

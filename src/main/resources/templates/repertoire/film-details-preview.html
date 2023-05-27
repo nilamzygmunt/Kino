@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="shared/layout">
+<head>
+    <title>My Example</title>
+
+    <!-- CSS -->
+    <style>
+        /* Force scrollbars onto browser window */
+        body {
+            margin-bottom: 200%;
+        }
+
+        /* Box styles */
+        .myBox {
+            border: none;
+            padding: 5px;
+            font: 24px/36px sans-serif;
+            height: 500px;
+            overflow-y: scroll;
+        }
+
+        /* Scrollbar styles */
+        ::-webkit-scrollbar {
+            width: 12px;
+            height: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            border: 1px solid gray;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: gray;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #88ba1c;
+        }
+
+        .wrapperDesc {
+            text-align: center;
+            border-style: groove;
+        }
+
+        .button {
+            background-color: gray;
+            border: none;
+            color: black;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        #outer
+        {
+            width:100%;
+            text-align: center;
+        }
+        .inner
+        {
+            display: inline-block;
+        }
+    </style>
+</head>
+<div layout:fragment="content">
+    <h1 th:text="${film.getTitle()}" class="section_title">Film</h1>
+    <div class="wrapperDesc">
+        <div class="myBox">
+            As you can see, once there's enough text in this box, the box will grow scroll bars... that's why we call it a scroll box! You could also place an image into the scroll box.
+            As you can see, once there's enough text in this box, the box will grow scroll bars... that's why we call it a scroll box! You could also place an image into the scroll box.
+            As you can see, once there's enough text in this box, the box will grow scroll bars... that's why we call it a scroll box! You could also place an image into the scroll box.
+            As you can see, once there's enough text in this box, the box will grow scroll bars... that's why we call it a scroll box! You could also place an image into the scroll box.
+            As you can see, once there's enough text in this box, the box will grow scroll bars... that's why we call it a scroll box! You could also place an image into the scroll box.
+        </div>
+    </div>
+
+    <div id="outer">
+        <div class="inner">
+            <a href="/repertoire" class="button" style="position: absolute; right: 21%">Back</a>
+        </div>
+    </div>
+
+</div>
+</html>

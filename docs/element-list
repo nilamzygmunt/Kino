@@ -1,0 +1,8 @@
+po.kinomorrigan
+po.kinomorrigan.controllers
+po.kinomorrigan.models
+po.kinomorrigan.models.enums
+po.kinomorrigan.models.initialization
+po.kinomorrigan.models.repositories
+po.kinomorrigan.seleniumTests
+po.kinomorrigan.services

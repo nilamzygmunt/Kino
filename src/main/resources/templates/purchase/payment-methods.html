@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en"
+      layout:decorate="shared/layout"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<title layout:fragment="title">Payment</title>
+<div layout:fragment="content">
+    <h1 class="section_title">Sprzedaż biletów</h1>
+    <div class="screening_sale_page">
+        <h2>Forma płatności</h2>
+        <div class="payment_methods">
+            <button class="payment_method"
+                    th:onclick="|window.location.href='/reservations/${reservationId}/payment-type?method=CARD'|">KARTA
+            </button>
+            <button class="payment_method"
+                    th:onclick="|window.location.href='/reservations/${reservationId}/payment-type?method=CASH'|">
+                GOTÓWKA
+            </button>
+            <button class="payment_method"
+                    th:onclick="|window.location.href='/reservations/${reservationId}/payment-type?method=RESERVATION'|">
+                ZAREZERWUJ
+            </button>
+        </div>
+    </div>
+</div>
+</html>

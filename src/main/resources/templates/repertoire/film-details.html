@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="shared/layout">
+<head>
+  <title>My Example</title>
+
+  <!-- CSS -->
+  <style>
+    /* Force scrollbars onto browser window */
+    body {
+      margin-bottom: 200%;
+    }
+
+    /* Box styles */
+    .myBox {
+      border: none;
+      padding: 5px;
+      font: 24px/36px sans-serif;
+      height: 500px;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      text-align: center;
+    }
+
+    /* Scrollbar styles */
+    ::-webkit-scrollbar {
+      width: 12px;
+      height: 12px;
+    }
+
+    ::-webkit-scrollbar-track {
+      border: 1px solid gray;
+      border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: gray;
+      border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #88ba1c;
+    }
+
+    .wrapperDesc {
+      text-align: center;
+      border-style: groove;
+    }
+
+    .button {
+      background-color: gray;
+      border: none;
+      color: black;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    #outer
+    {
+      width:100%;
+      text-align: center;
+    }
+    .inner
+    {
+      display: inline-block;
+    }
+
+    textarea {
+      width: 100%;
+      height: 100%;
+    }
+
+    .filmInfo {
+      font-size: 20px;
+      font-style: italic;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<div layout:fragment="content">
+  <h1 th:text="${film.getTitle()}" class="section_title">Movie</h1>
+  <h1> Age category: </h1>
+  <div th:text="${film.getAgeCategory()}" class="filmInfo"></div>
+  <h1>Duration:</h1>
+  <div th:text="${film.getDurationTimeMinutes()}" class="filmInfo"></div>
+  <h1>Premiere:</h1>
+  <div th:text="${film.getPremiere()}" class="filmInfo"></div>
+
+  <div class="wrapperDesc">
+    <div class="myBox" contenteditable="true">
+      <form style="height: 80%" novalidate action="#" method="post"
+            th:action="@{/repertoire/{filmId}/update-film(filmId = ${film.getId()})}">
+        <textarea name="description" >Film description</textarea>
+        <button class="button">Edit</button>
+      </form>
+    </div>
+  </div>
+
+</div>
+</html>

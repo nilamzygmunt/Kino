@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="shared/layout">
+<title layout:fragment="title">Ticket prices</title>
+<div layout:fragment="content">
+    <div class="ticket_type_page">
+        <div class="header_container">
+            <a href="/ticket-types/prices"><img alt="back-arrow" class="triangle" src="/images/triangle.png"></a>
+            <h1 class="section_title" th:text="${ticket.getName()}">Nazwa biletu</h1>
+        </div>
+        <div class="main_container">
+            <div class="ticket_edit_row">
+                <span>
+                    Cena podstawowa
+                </span>
+                <form novalidate action="#" method="post"
+                      th:action="@{/ticket-types/{id}/update-price(id = ${ticket.getId()})}">
+                    <input name="newPrice" onkeypress="return (event.charCode >= 48 && event.charCode <= 57) ||
+                event.charCode == 46"
+                           th:value="${ticket.getBasePrice()}" type="number">
+                    <span>zł</span>
+                    <button class="edit_button">Edytuj</button>
+                </form>
+            </div>
+            <div class="ticket_edit_row">
+                <span>
+                    Wartość ulgi
+                </span>
+                <form novalidate action="#" method="post"
+                      th:action="@{/ticket-types/{id}/update-discount(id = ${ticket.getId()})}">
+                    <input name="newDiscount" onkeypress="return (event.charCode >= 48 && event.charCode <= 57) ||
+                event.charCode == 46"
+                           th:value="${ticket.getDiscount()}" type="number">
+                    <span>%</span>
+                    <button class="edit_button">Edytuj</button>
+                </form>
+            </div>
+            <div class="ticket_edit_row">
+                <span>Cena biletu ulgowego: <span th:text="${ticket.getReducedTicketPrice()}"/> zł</span>
+            </div>
+        </div>
+    </div>
+    <div class="alert error" th:if="${errorMessage != null}" th:text="${errorMessage}">
+        Cena biletu zaktualizowana pomyślnie
+    </div>
+    <div class="alert" th:if="${alertPositive != null}" th:text="${alertPositive}">
+
+    </div>
+</div>
+</html>

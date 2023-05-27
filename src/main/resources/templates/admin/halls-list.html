@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="shared/layout">
+<title layout:fragment="title">Halls</title>
+<div layout:fragment="content">
+    <h1 class="section_title">Sale kinowe</h1>
+
+    <table class="ticket_table">
+        <tr th:each="hall : ${halls}">
+            <td>
+                <div class="ticket_price_info">
+                    <div class="ticket_price_header">
+                        <span class="ticket_title">Numer Sali: <span class="ticket_title" th:text="${hall.getId()}">Name</span></span>
+                        <button class="edit_button"
+                                th:onclick="|window.location.href='/halls/${hall.getId()}'|">Edytuj
+                        </button>
+                    </div>
+                    <div class="ticket_prices">
+                        <span>Liczba miejsc: <span class="price_text"
+                                              th:text="${hall.getNumberOfSeats()}">Seats</span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+</html>

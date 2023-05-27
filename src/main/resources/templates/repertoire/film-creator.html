@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="shared/layout">
+<head>
+  <title>Add movie</title>
+
+  <!-- CSS -->
+  <style>
+    /* Force scrollbars onto browser window */
+    body {
+      margin-bottom: 200%;
+    }
+
+    /* Box styles */
+    .myBox {
+      border: none;
+      padding: 5px;
+      font: 24px/36px sans-serif;
+      height: 500px;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      text-align: center;
+    }
+
+    /* Scrollbar styles */
+    ::-webkit-scrollbar {
+      width: 12px;
+      height: 12px;
+    }
+
+    ::-webkit-scrollbar-track {
+      border: 1px solid gray;
+      border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: gray;
+      border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #88ba1c;
+    }
+
+    .wrapperDesc {
+      text-align: center;
+      border-style: groove;
+    }
+
+    .button {
+      background-color: gray;
+      border: none;
+      color: black;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    #outer
+    {
+      width:100%;
+      text-align: center;
+    }
+    .inner
+    {
+      display: inline-block;
+    }
+
+    textarea {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<div layout:fragment="content">
+  <h1 class="section_title"> Add new movie</h1>
+  <div class="wrapperDesc">
+    <div class="myBox" contenteditable="true">
+      <form style="height: 80%" novalidate action="#" method="post"
+            th:action="@{/repertoire/create-film}">
+        <input name="title" placeholder="Movie title">
+        <input name="ageCategory" placeholder="Age category">
+        <input name="duration" placeholder="Duration">
+        <input name="premiere" placeholder="Premiere date">
+        <input name="genre" placeholder="Genre">
+        <textarea name="description" >Film description</textarea>
+        <button id="addFilmButton" class="button">Add</button>
+      </form>
+    </div>
+  </div>
+
+</div>
+</html>
