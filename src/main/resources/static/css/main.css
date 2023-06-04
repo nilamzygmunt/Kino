@@ -1,6 +1,6 @@
 html {
     min-height: 100%;
-    background-color: #D9D9D9;
+    background-color: #000000;
 }
 
 body {
@@ -8,6 +8,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: Candara, sans-serif;
+    color: white;
 }
 
 main {
@@ -15,8 +16,8 @@ main {
 }
 
 .navbar {
-    background-color: #231387;
-    border-bottom: 2px solid aliceblue;
+    background-color: #fdd32d;
+    border-bottom: 2px solid #000000;
     height: 60px;
     width: 100%;
     margin: 0;
@@ -48,11 +49,11 @@ main {
     text-align: center;
     height: 20px;
     padding: 5px 12px;
-    border-right: 1px solid aliceblue;
+    border-right: 1px solid #000000;
 }
 
 .nav_elem a, span {
-    color: aliceblue;
+    color: #000000;
     text-decoration: none;
     font-family: Candara, sans-serif;
     font-size: 20px;
@@ -78,13 +79,13 @@ main {
 
 .tickets_dropdown a {
     float: none;
-    color: aliceblue;
-    background-color: #52488D;
+    color: #000000;
+    background-color: #fdd32d;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
     text-align: left;
-    border: 1px solid aliceblue;
+    border: 1px solid #000000;
 }
 
 .repertoire_dropdown {
@@ -99,24 +100,24 @@ main {
 
 .repertoire_dropdown a {
     float: none;
-    color: aliceblue;
-    background-color: #52488D;
+    color: #000000;
+    background-color: #fdd32d;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
     text-align: left;
-    border: 1px solid aliceblue;
+    border: 1px solid #000000;
 }
 
 .center-grey-content {
-    background-color: #D9D9D9;
+    background-color: #000000;
     display: flex;
     align-items: center;
     height: 100%;
 }
 
 .center-white-content {
-    background-color: #FFFFFF;
+    background-color: #000000;
     width: 60%;
     margin: 40px auto;
     padding: 80px 50px;
@@ -127,7 +128,7 @@ main {
 
 .section_title {
     font-size: 50px;
-    border-bottom: 2px solid #231387;
+    border-bottom: 2px solid #fdd32d;
     padding-bottom: 30px;
     margin-bottom: 60px;
 }
@@ -139,7 +140,7 @@ main {
 }
 
 .edit_button {
-    background-color: #7d7d7d;
+    background-color: #fdd32d;
     border-radius: 10px;
     width: 100px;
     height: 29px;
@@ -148,11 +149,10 @@ main {
 }
 
 .ticket_price_info {
-    background-color: #ecebf3;
-    border-radius: 10px;
+    background-color: #fdd32d;
+    border: 1px solid #fdd32d;
     height: 120px;
     width: 600px;
-    box-shadow: 16px 20px 15px -20px rgba(66, 68, 90, 1);
     margin: 25px;
     padding: 40px;
     display: flex;
@@ -162,17 +162,18 @@ main {
 
 .ticket_title {
     font-size: 40px;
-    color: #231387;
+    color: #fdd32d;
 }
 
 .ticket_prices {
     display: flex;
     flex-direction: row;
+    color: white;
 }
 
 .ticket_prices span {
     font-size: 25px;
-    color: black;
+    color: #ffffff;
     width: 50%;
 }
 
@@ -191,7 +192,7 @@ main {
 
 .section_title {
     font-size: 50px;
-    border-bottom: 2px solid #231387;
+    border-bottom: 2px solid #fdd32d;
     padding-bottom: 30px;
     margin-bottom: 60px;
 }
@@ -203,7 +204,8 @@ main {
 }
 
 .edit_button {
-    background-color: #7d7d7d;
+    background-color: #fdd32d;
+    color: black;
     border-radius: 10px;
     width: 100px;
     height: 29px;
@@ -212,11 +214,12 @@ main {
 }
 
 .ticket_price_info {
-    background-color: #ecebf3;
+    background-color: #000000;
     border-radius: 10px;
+    border-color:#ECAE40FF;
     height: 120px;
     width: 600px;
-    box-shadow: 16px 20px 15px -20px rgba(66, 68, 90, 1);
+    box-shadow: 16px 20px 15px -20px rgb(236, 174, 64);
     margin: 25px;
     padding: 40px;
     display: flex;
@@ -226,7 +229,7 @@ main {
 
 .ticket_title {
     font-size: 40px;
-    color: #231387;
+    color: #fdd32d;
 }
 
 .ticket_prices {
@@ -236,7 +239,7 @@ main {
 
 .ticket_prices span {
     font-size: 25px;
-    color: black;
+    color: #ffffff;
     width: 50%;
 }
 
@@ -252,7 +255,7 @@ main {
 }
 
 footer {
-    background-color: #D9D9D9;
+    background-color: #000000;
 }
 
 /* ticket-type page */
@@ -280,17 +283,17 @@ footer {
 .ticket_edit_row input {
     width: 110px;
     height: 38px;
-    background-color: #D9D9D9;
-    border: 2px solid black;
+    background-color: #000000;
+    border: 2px solid #ffffff;
     -moz-appearance: textfield;
 }
 .ticket_type_page span {
-    color: black;
+    color: #ffffff;
     font-size: 20px;
     font-width: bold;
 }
 .ticket_edit_row:last-of-type span{
-    color: #7D7D7D;
+    color: #fdd32d;
 }
 .header_container {
     display:flex;
@@ -307,35 +310,35 @@ footer {
     padding: 0;
 }
 .header_container {
-    border-bottom: 2px solid #231387;
+    border-bottom: 2px solid #fdd32d;
     padding-bottom: 23px;
 }
 .alert {
     width: 100%;
     background-color: #ECFEE6;
-    border: 1px solid #65C15D;
+    border: 1px solid #568f52;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 20px;
-    color: #474747;
+    color: #377230;
     padding: 15px 0;
 }
 .alert.error {
-    background-color: #FDE3E3;
-    border: 1px solid #DB4343;
+    background-color: #f37575;
+    border: 1px solid #ad3535;
 }
 /* screening choose page */
 .screening_sale_page h2{
-    color: black;
+    color: #ffffff;
     font-weight: bold;
     font-size: 18px;
     margin-bottom: 20px;
 }
 .screening_item{
     height: 45px;
-    border: 1px solid #231387;
-    background-color: #f5f5f5;
+    border: 1px solid #fdd32d;
+    background-color: #000000;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -346,7 +349,7 @@ footer {
     border-radius: 5px;
 }
 .screening_item span{
-    color: black;
+    color: #ffffff;
 }
 .screening_item .title {
     font-weight: bold;
@@ -381,12 +384,12 @@ footer {
 .ticket_edit_row input {
     width: 110px;
     height: 38px;
-    background-color: #D9D9D9;
-    border: 2px solid black;
+    background-color: #000000;
+    border: 2px solid #ffffff;
 }
 
 .ticket_type_page span {
-    color: black;
+    color: #ffffff;
     font-size: 20px;
     font-width: bold;
 }
@@ -413,14 +416,14 @@ footer {
 }
 
 .header_container {
-    border-bottom: 2px solid #231387;
+    border-bottom: 2px solid #fdd32d;
     padding-bottom: 23px;
 }
 
 .alert {
     width: 100%;
-    background-color: #ECFEE6;
-    border: 1px solid #65C15D;
+    background-color: #85c481;
+    border: 1px solid #568f52;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -430,13 +433,13 @@ footer {
 }
 
 .alert.error {
-    background-color: #FDE3E3;
-    border: 1px solid #DB4343;
+    background-color: #f37575;
+    border: 1px solid #ad3535;
 }
 
 /* screening choose page */
 .screening_sale_page h2 {
-    color: black;
+    color: #ffffff;
     font-weight: bold;
     font-size: 24px;
     margin-bottom: 20px;
@@ -449,8 +452,8 @@ footer {
 
 .screening_item {
     height: 45px;
-    border: 1px solid #231387;
-    background-color: #f5f5f5;
+    border: 1px solid #fdd32d;
+    background-color: #000000;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -462,7 +465,7 @@ footer {
 }
 
 .screening_item span {
-    color: black;
+    color: #ffffff;
 }
 
 .screening_item .title {
@@ -475,10 +478,10 @@ footer {
 .screening_seat_choice {
     display: flex;
     flex-direction: column;
-    border: 1px solid #231387;
+    border: 1px solid #fdd32d;
     border-radius: 5px;
     padding: 20px;
-    background-color: #F5F5F5;
+    background-color: #000000;
     align-items: center;
 }
 
@@ -486,8 +489,8 @@ footer {
     width: 290px;
     height: 23px;
     margin: 20px;
-    border: 1px solid black;
-    background-color: #D9D9D9;
+    border: 1px solid #ffffff;
+    background-color: #000000;
     display: flex;
     justify-content: center;
 }
@@ -495,7 +498,7 @@ footer {
 .screen span {
     font-size: 20px;
     font-weight: bold;
-    color: black;
+    color: #ffffff;
 }
 
 .screening_seat_choice button {
@@ -518,7 +521,7 @@ footer {
 
 .screening_basic_info span {
     font-size: 24px;
-    color: black;
+    color: #ffffff;
     padding: 0 30px;
 }
 
@@ -533,9 +536,9 @@ footer {
     -webkit-appearance: none;
     width: 28px;
     height: 28px;
-    border: 1px solid black;
+    border: 1px solid #ffffff;
     border-radius: 5px;
-    background-color: #B0F4AA;
+    background-color: #568f52;
     margin: 20px;
 }
 
@@ -549,18 +552,18 @@ footer {
 /*}*/
 
 .seat_checkbox:checked {
-    background-color: #231387;
+    background-color: #fdd32d;
 }
 
 .seat_checkbox:disabled {
-    background-color: #F47E7E;
+    background-color: #ad3535;
 }
 
 .purple_button {
     width: 124px;
     height: 37px;
-    background-color: #231387;
-    color: #FFFFFF;
+    background-color: #fdd32d;
+    color: #000000;
     border-radius: 5px;
     font-size: 20px;
     border: none;
@@ -571,9 +574,9 @@ footer {
 .ticket_type_choice {
     width: 480px;
     height: 180px;
-    background-color: #ecebf3;
+    background-color: #000000;
     border-radius: 10px;
-    box-shadow: 16px 20px 15px -20px rgba(66, 68, 90, 1);
+    box-shadow: 16px 20px 15px -20px rgb(0, 0, 0);
     display: flex;
     flex-direction: column;
     margin: 20px;
@@ -582,7 +585,7 @@ footer {
 }
 
 .ticket_number_choice span {
-    color: black;
+    color: #ffffff;
     font-size: 16px;
 }
 
@@ -627,6 +630,7 @@ footer {
 
 .payment_methods {
     display: flex;
+    color: #fdd32d;
     flex-direction: row;
     justify-content: space-evenly;
     margin: 80px 0;
@@ -635,8 +639,9 @@ footer {
 .payment_method {
     width: 200px;
     height: 200px;
-    border: 2px solid #231387;
-    background-color: #EFEDFF;
+    color: #fdd32d;
+    border: 2px solid #fdd32d;
+    background-color: #000000;
     border-radius: 10px;
     font-size: 24px;
     font-weight: bold;
@@ -645,8 +650,8 @@ footer {
 .confirmation_div {
     width: 575px;
     height: 165px;
-    background-color: #EFEDFF;
-    border: 2px solid #231387;
+    background-color: #000000;
+    border: 2px solid #fdd32d;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -657,7 +662,7 @@ footer {
 
 .confirmation_div span {
     font-size: 20px;
-    color: black;
+    color: #ffffff;
     font-weight: bold;
 }
 

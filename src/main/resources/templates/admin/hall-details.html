@@ -16,14 +16,14 @@
                        type="checkbox">
             </div>
             <div class="ticket_edit_row">
-                <span>
+                <span style="color: white">
                     Liczba miejsc
                 </span>
                 <form novalidate action="#" method="post"
                       th:action="@{/halls/{id}/edit-seats(id = ${hall.getId()})}">
                     <input name="newSeatsNumber" onkeypress="return (event.charCode >= 48 && event.charCode <= 57) ||
                 event.charCode == 46"
-                           th:value="${hall.getNumberOfSeats}" type="number">
+                           th:value="${hall.getNumberOfSeats}" type="number" style="color: white">
                     <button class="edit_button" id="confirm_seats">Edytuj</button>
                 </form>
 

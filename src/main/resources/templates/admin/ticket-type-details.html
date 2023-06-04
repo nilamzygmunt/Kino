@@ -18,7 +18,7 @@
                       th:action="@{/ticket-types/{id}/update-price(id = ${ticket.getId()})}">
                     <input name="newPrice" onkeypress="return (event.charCode >= 48 && event.charCode <= 57) ||
                 event.charCode == 46"
-                           th:value="${ticket.getBasePrice()}" type="number">
+                           th:value="${ticket.getBasePrice()}" type="number" style="color: white">
                     <span>zł</span>
                     <button class="edit_button">Edytuj</button>
                 </form>
@@ -31,13 +31,13 @@
                       th:action="@{/ticket-types/{id}/update-discount(id = ${ticket.getId()})}">
                     <input name="newDiscount" onkeypress="return (event.charCode >= 48 && event.charCode <= 57) ||
                 event.charCode == 46"
-                           th:value="${ticket.getDiscount()}" type="number">
+                           th:value="${ticket.getDiscount()}" type="number" style="color: white">
                     <span>%</span>
                     <button class="edit_button">Edytuj</button>
                 </form>
             </div>
             <div class="ticket_edit_row">
-                <span>Cena biletu ulgowego: <span th:text="${ticket.getReducedTicketPrice()}"/> zł</span>
+                <span style="color: white">Cena biletu ulgowego: <span style="color: white" th:text="${ticket.getReducedTicketPrice()}"/> zł</span>
             </div>
         </div>
     </div>
